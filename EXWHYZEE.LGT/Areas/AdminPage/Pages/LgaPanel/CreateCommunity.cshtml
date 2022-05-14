@@ -1,0 +1,92 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.LgaPanel.CreateCommunityModel
+
+@{
+    ViewData["Title"] = "CreateCommunity";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h3>New Community LGA in @Model.LGA.Name </h3>
+
+        <a asp-page="/LgaPanel/CommunityPage" class="btn btn-danger" style="float:right;">Back to List</a>
+
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="Community.LocalGovernmentId" value="@Model.LGA.Id" hidden="hidden" />
+
+                    <div class="form-group">
+                        <label asp-for="Community.Title" class="control-label"></label>
+                        <input asp-for="Community.Title" class="form-control" />
+                        <span asp-validation-for="Community.Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.Description" class="control-label"></label>
+                        <input asp-for="Community.Description" class="form-control" />
+                        <span asp-validation-for="Community.Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.Longitude" class="control-label"></label>
+                        <input asp-for="Community.Longitude" class="form-control" />
+                        <span asp-validation-for="Community.Longitude" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.Latitude" class="control-label"></label>
+                        <input asp-for="Community.Latitude" class="form-control" />
+                        <span asp-validation-for="Community.Latitude" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.LandMass" class="control-label"></label>
+                        <input asp-for="Community.LandMass" class="form-control" />
+                        <span asp-validation-for="Community.LandMass" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.Populations" class="control-label"></label>
+                        <input asp-for="Community.Populations" class="form-control" />
+                        <span asp-validation-for="Community.Populations" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.Male" class="control-label"></label>
+                        <input asp-for="Community.Male" class="form-control" />
+                        <span asp-validation-for="Community.Male" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.Female" class="control-label"></label>
+                        <input asp-for="Community.Female" class="form-control" />
+                        <span asp-validation-for="Community.Female" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.SelfEmployed" class="control-label"></label>
+                        <input asp-for="Community.SelfEmployed" class="form-control" />
+                        <span asp-validation-for="Community.SelfEmployed" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.Employed" class="control-label"></label>
+                        <input asp-for="Community.Employed" class="form-control" />
+                        <span asp-validation-for="Community.Employed" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Community.UnEmployed" class="control-label"></label>
+                        <input asp-for="Community.UnEmployed" class="form-control" />
+                        <span asp-validation-for="Community.UnEmployed" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Add" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+       
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }

@@ -1,0 +1,76 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.LgaDisburse.Breakdown.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LgaDisbusementBreakdown</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.ApprovalNote)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.ApprovalNote)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.ApprovalStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.ApprovalStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.DateReceived)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.DateReceived)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Duration)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Duration)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.LgaDisbusement)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.LgaDisbusement.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="LgaDisbusementBreakdown.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

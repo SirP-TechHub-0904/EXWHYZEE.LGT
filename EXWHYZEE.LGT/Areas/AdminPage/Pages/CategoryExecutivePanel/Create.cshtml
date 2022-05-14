@@ -1,0 +1,52 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.CategoryExecutivePanel.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CategoryExecutive</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CategoryExecutive.UserId" class="control-label"></label>
+                <select asp-for="CategoryExecutive.UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryExecutive.CategoryId" class="control-label"></label>
+                <select asp-for="CategoryExecutive.CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryExecutive.Position" class="control-label"></label>
+                <input asp-for="CategoryExecutive.Position" class="form-control" />
+                <span asp-validation-for="CategoryExecutive.Position" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryExecutive.StartDate" class="control-label"></label>
+                <input asp-for="CategoryExecutive.StartDate" class="form-control" />
+                <span asp-validation-for="CategoryExecutive.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryExecutive.EndDate" class="control-label"></label>
+                <input asp-for="CategoryExecutive.EndDate" class="form-control" />
+                <span asp-validation-for="CategoryExecutive.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

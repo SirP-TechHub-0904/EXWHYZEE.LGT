@@ -1,0 +1,94 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.LgaPanel.LgaStateModel
+
+@{
+    ViewData["Title"] = "LgaState";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>All LGA in @Model.State.Title (@Model.LocalGovernment.Count())</h3>
+
+        <a asp-page="./Create" asp-route-id="@Model.State.Id" class=" btn btn-danger">Add New LGA</a>
+        <a asp-page="/StatePanel/Index" class="btn btn-danger" style="float:right;">Back to List</a>
+
+    </div>
+    <div class="card-body">
+
+
+
+        <div class="datatable-scroll">
+            <table class="table datatable-show-all dataTable no-footer table-bordered" id="DataTables_Table_0">
+
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LocalGovernment[0].Name)
+                        </th>
+                        <th>Communities</th>
+                        <th>Population</th>
+                        <th>Male</th>
+                        <th>Female</th>
+                        <th>Employed</th>
+                        <th>Selfemployed</th>
+                        <th>Unemployed</th>
+                        <th>Executives</th>
+                        <th>Staff</th>
+                        <th>Sections</th>
+                    </tr>
+                </thead>
+                @{
+                    int sno = 0;
+                }
+                <tbody>
+                    @foreach (var item in Model.LocalGovernment)
+                    {
+                    <tr>
+                        <td>
+                            @{ sno++; }
+                            @sno
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.Id">
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </a>
+                        </td>
+
+                        <td>
+                            <a asp-page="./CommunityPage" asp-route-id="@item.Id">
+                                @item.Communities.Count()
+                                </a>
+</td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Populations)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Male)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Female)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Employed)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SelfEmployed)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.UnEmployed)
+                        </td>
+                        <td>
+                            @item.LocalGovtExecutives.Count()
+                        </td>
+                        <td>
+                            @item.LgaStaff.Count()
+                        </td>
+                        <td>
+                            @item.Categories.Count()
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>        </div>            </div>

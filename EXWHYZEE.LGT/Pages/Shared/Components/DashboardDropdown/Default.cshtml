@@ -1,0 +1,15 @@
+﻿
+
+<a href="#" class="navbar-nav-link navbar-nav-link-toggler dropdown-toggle d-inline-flex align-items-center h-100" data-toggle="dropdown">
+    @if (TempData["img"] != null)
+    {
+        <img src="@TempData["img"]" class="rounded-pill" height="34" alt="">
+
+    }
+    else
+    {
+        <img src="~/img/user1.jpg" class="rounded-pill" height="34" alt="">
+
+    }
+    <span class="d-none d-lg-inline-block ml-2">@TempData["data"]</span>
+</a>

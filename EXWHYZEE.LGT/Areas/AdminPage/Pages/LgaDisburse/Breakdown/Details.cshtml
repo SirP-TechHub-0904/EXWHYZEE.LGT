@@ -1,0 +1,73 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.LgaDisburse.Breakdown.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LgaDisbusementBreakdown</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.ApprovalNote)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.ApprovalNote)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.ApprovalStatus)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.ApprovalStatus)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Amount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.DateReceived)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.DateReceived)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.Duration)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.Duration)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LgaDisbusementBreakdown.LgaDisbusement)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LgaDisbusementBreakdown.LgaDisbusement.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.LgaDisbusementBreakdown.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

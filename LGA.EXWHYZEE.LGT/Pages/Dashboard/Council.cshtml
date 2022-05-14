@@ -1,0 +1,91 @@
+﻿@page
+@model LGA.EXWHYZEE.LGT.Pages.Dashboard.CouncilModel
+@{
+}
+<div class="row">
+    <div class="col-12">
+        <div class="box">
+            <div class="box-header">
+                <h2 class="box-title" style="text-align:center;font-weight:900;text-transform:uppercase;">
+                    @Model.LocalGovernment.Name LOCAL GOVERNMENT AREA
+                </h2>
+            </div>
+            <div class="box-body">
+
+                <div class="row">
+
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 col-xs-12">
+                        <!-- small box -->
+                        <div class="small-box bg-black">
+                            <div class="inner">
+                                <a asp-page="">
+                                    <h2 style="color:#ffffff;">THE LOCAL GOVERNMENT COUNCIL</h2>
+                                </a>
+                                @if (Model.LocalGovtExecutive != null)
+                                {
+                                    <h3>@Model.LocalGovtExecutive.User.FullName AS CHAIRMAN</h3>
+                                }
+                                else
+                                {
+                                    <h3>------- AS CHAIRMAN</h3>
+
+                                }
+
+                            </div>
+
+                            <a asp-page="/MainLG/Section" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <a asp-page="">
+                                    <h3>@Model.LocalGovernment.LgaStaff.Count()</h3>
+                                </a>
+
+                                <p>STAFF</p>
+                            </div>
+
+                            <a asp-page="/Dashboard/ListStaff" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <a asp-page="">
+                                    <h3>0</h3>
+                                </a>
+
+                                <p>MALE STAFF</p>
+                            </div>
+
+                            <a asp-page="/Dashboard/ListStaff" asp-route-sort="02bfbbf2-e626-4956-83ac-7051bd0e84cb" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xs-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <a asp-page="">
+                                    <h3>0</h3>
+                                </a>
+
+                                <p>FEMALE STAFF</p>
+                            </div>
+
+                            <a asp-page="/Dashboard/ListStaff" asp-route-sort="0a37dc2e-273f-43f6-8e4f-b2e29e0bc91a" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

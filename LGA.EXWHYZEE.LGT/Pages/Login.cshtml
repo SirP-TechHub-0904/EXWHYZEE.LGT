@@ -1,0 +1,213 @@
+﻿@page
+@model LGA.EXWHYZEE.LGT.Pages.LoginModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<!-- saved from url=(0099)https://storage.googleapis.com/theme-vessel-items/checking-sites/oddo-2-html/HTML/main/login-8.html -->
+<html lang="zxx">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Login - Local Governace ToolBox</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">*@
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .vid-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        @@media (min-width: 320px) and (max-width: 425px) {
+
+            .bgvid {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 360vw;
+            }
+        }
+
+        @@media (min-width: 425px) and (max-width: 768px) {
+
+            .bgvid {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 340vw;
+            }
+        }
+
+        @@media (min-width: 768px) and (max-width: 1024px) {
+
+            .bgvid {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 170vw;
+            }
+        }
+
+        @@media (min-width: 1024px) and (max-width: 2000px) {
+
+            .bgvid {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 110vw;
+            }
+        }
+
+
+
+
+
+        .inner-container {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: calc(50vh - 200px);
+            left: calc(50vw - 200px);
+            overflow: hidden;
+        }
+
+        .bgvid.inner {
+            top: calc(-50vh + 200px);
+            left: calc(-50vw + 200px);
+            filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
+            -webkit-filter: blur(40px);
+            -ms-filter: blur(40px);
+            -o-filter: blur(40px);
+            filter: blur(40px);
+        }
+
+        .box {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            font-family: Helvetica;
+            color: #fff;
+            background: #2ecc71b0;
+            padding: 30px 0px;
+        }
+
+            .box h1 {
+                text-align: center;
+                margin: 30px 0;
+                font-size: 30px;
+            }
+
+        @@media (min-width: 375px) {
+            .box input {
+                display: block;
+                width: 300px;
+                margin: 20px auto;
+                padding: 15px;
+                background: rgb(18 17 17 / 64%);
+                color: #fff;
+                border: 0;
+            }
+        }
+
+        @@media (max-width: 375px) {
+            .box input {
+                display: block;
+                width: 200px;
+                margin: 20px auto;
+                padding: 15px;
+                background: rgb(18 17 17 / 64%);
+                color: #fff;
+                border: 0;
+            }
+        }
+
+
+        .box input:focus, .box input:active, .box button:focus, .box button:active {
+            outline: none;
+        }
+
+        .box button {
+            background: #2ecc71;
+            border: 0;
+            color: #fff;
+            padding: 10px;
+            font-size: 20px;
+            width: 330px;
+            margin: 20px auto;
+            display: block;
+            cursor: pointer;
+        }
+
+            .box button:active {
+                background: #27ae60;
+            }
+
+        .box p {
+            font-size: 14px;
+            text-align: center;
+        }
+
+            .box p span {
+                cursor: pointer;
+                color: #666;
+            }
+    </style>
+
+</head>
+<body id="top" data-new-gr-c-s-check-loaded="14.1055.0" data-gr-ext-installed="" class="bg">
+    <div class="vid-container">
+        <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
+            <source src="~/folder/login.mp4" type="video/webm">
+        </video>
+        <div class="inner-container">
+            <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+                <source src="~/folder/login.mp4" type="video/webm">
+            </video>
+            <div class="box">
+                <h4 style="text-align:center;">LOGIN</h4>
+                <form method="post">
+
+                    @if (TempData["alert"] != null)
+                    {
+
+                        <div class="form-group form-box">
+                            <div class="alert alert-danger">
+                                <strong>Alert!</strong> @TempData["alert"]
+                            </div>
+
+                        </div>}
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div class="form-group form-box">
+                        <input asp-for="Input.Email" class="form-control" placeholder="Email" />
+
+                    </div>
+                    <div class="form-group form-box">
+                        <input asp-for="Input.Password" class="form-control" placeholder="Password" />
+
+                    </div>
+                    @*<div class="form-group form-box">
+                                <input asp-for="Input.RememberMe" />Remember me
+
+                        </div>*@
+                    <div class="form-group mb-0">
+                        <button type="submit" class="btn-md btn-theme w-100">Login</button>
+                        @*<a asp-page="/Account/ForgotPassword" asp-area="Identity" class="" style="text-align:center;color:#fff;text-decoration:none;">Forgot Password</a>*@
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

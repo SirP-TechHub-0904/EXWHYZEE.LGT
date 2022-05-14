@@ -1,0 +1,60 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.SectionExecPanel.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionExecutive[0].User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionExecutive[0].Section)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionExecutive[0].Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionExecutive[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SectionExecutive[0].EndDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.SectionExecutive) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Section.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

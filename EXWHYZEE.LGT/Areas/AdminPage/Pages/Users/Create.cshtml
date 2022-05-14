@@ -1,0 +1,245 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.Users.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Profile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Profile.Role" class="control-label"></label>
+                <input asp-for="Profile.Role" class="form-control" />
+                <span asp-validation-for="Profile.Role" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Salary" class="control-label"></label>
+                <input asp-for="Profile.Salary" class="form-control" />
+                <span asp-validation-for="Profile.Salary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.DOB" class="control-label"></label>
+                <input asp-for="Profile.DOB" class="form-control" />
+                <span asp-validation-for="Profile.DOB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.EmploymentDate" class="control-label"></label>
+                <input asp-for="Profile.EmploymentDate" class="form-control" />
+                <span asp-validation-for="Profile.EmploymentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.RetirementDate" class="control-label"></label>
+                <input asp-for="Profile.RetirementDate" class="form-control" />
+                <span asp-validation-for="Profile.RetirementDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Position" class="control-label"></label>
+                <input asp-for="Profile.Position" class="form-control" />
+                <span asp-validation-for="Profile.Position" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Rank" class="control-label"></label>
+                <input asp-for="Profile.Rank" class="form-control" />
+                <span asp-validation-for="Profile.Rank" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Level" class="control-label"></label>
+                <input asp-for="Profile.Level" class="form-control" />
+                <span asp-validation-for="Profile.Level" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Surname" class="control-label"></label>
+                <input asp-for="Profile.Surname" class="form-control" />
+                <span asp-validation-for="Profile.Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Firstname" class="control-label"></label>
+                <input asp-for="Profile.Firstname" class="form-control" />
+                <span asp-validation-for="Profile.Firstname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Middlename" class="control-label"></label>
+                <input asp-for="Profile.Middlename" class="form-control" />
+                <span asp-validation-for="Profile.Middlename" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.AltPoneNumber" class="control-label"></label>
+                <input asp-for="Profile.AltPoneNumber" class="form-control" />
+                <span asp-validation-for="Profile.AltPoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.FullContactAdress" class="control-label"></label>
+                <input asp-for="Profile.FullContactAdress" class="form-control" />
+                <span asp-validation-for="Profile.FullContactAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.StateId" class="control-label"></label>
+                <select asp-for="Profile.StateId" class ="form-control" asp-items="ViewBag.StateId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.LocalGovernmentId" class="control-label"></label>
+                <select asp-for="Profile.LocalGovernmentId" class ="form-control" asp-items="ViewBag.LocalGovernmentId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.CommunitytId" class="control-label"></label>
+                <input asp-for="Profile.CommunitytId" class="form-control" />
+                <span asp-validation-for="Profile.CommunitytId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.PermanentHomeAddress" class="control-label"></label>
+                <input asp-for="Profile.PermanentHomeAddress" class="form-control" />
+                <span asp-validation-for="Profile.PermanentHomeAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.ValidIdCard" class="control-label"></label>
+                <input asp-for="Profile.ValidIdCard" class="form-control" />
+                <span asp-validation-for="Profile.ValidIdCard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.CV" class="control-label"></label>
+                <input asp-for="Profile.CV" class="form-control" />
+                <span asp-validation-for="Profile.CV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.AppointmentLetter" class="control-label"></label>
+                <input asp-for="Profile.AppointmentLetter" class="form-control" />
+                <span asp-validation-for="Profile.AppointmentLetter" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Passport" class="control-label"></label>
+                <input asp-for="Profile.Passport" class="form-control" />
+                <span asp-validation-for="Profile.Passport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.SalaryAccountNumber" class="control-label"></label>
+                <input asp-for="Profile.SalaryAccountNumber" class="form-control" />
+                <span asp-validation-for="Profile.SalaryAccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.SalaryAccountBank" class="control-label"></label>
+                <input asp-for="Profile.SalaryAccountBank" class="form-control" />
+                <span asp-validation-for="Profile.SalaryAccountBank" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.SalaryAccountName" class="control-label"></label>
+                <input asp-for="Profile.SalaryAccountName" class="form-control" />
+                <span asp-validation-for="Profile.SalaryAccountName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Height" class="control-label"></label>
+                <input asp-for="Profile.Height" class="form-control" />
+                <span asp-validation-for="Profile.Height" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Weight" class="control-label"></label>
+                <input asp-for="Profile.Weight" class="form-control" />
+                <span asp-validation-for="Profile.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.BodyStructure" class="control-label"></label>
+                <input asp-for="Profile.BodyStructure" class="form-control" />
+                <span asp-validation-for="Profile.BodyStructure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Id" class="control-label"></label>
+                <input asp-for="Profile.Id" class="form-control" />
+                <span asp-validation-for="Profile.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.UserName" class="control-label"></label>
+                <input asp-for="Profile.UserName" class="form-control" />
+                <span asp-validation-for="Profile.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.NormalizedUserName" class="control-label"></label>
+                <input asp-for="Profile.NormalizedUserName" class="form-control" />
+                <span asp-validation-for="Profile.NormalizedUserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Email" class="control-label"></label>
+                <input asp-for="Profile.Email" class="form-control" />
+                <span asp-validation-for="Profile.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.NormalizedEmail" class="control-label"></label>
+                <input asp-for="Profile.NormalizedEmail" class="form-control" />
+                <span asp-validation-for="Profile.NormalizedEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Profile.EmailConfirmed" /> @Html.DisplayNameFor(model => model.Profile.EmailConfirmed)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.PasswordHash" class="control-label"></label>
+                <input asp-for="Profile.PasswordHash" class="form-control" />
+                <span asp-validation-for="Profile.PasswordHash" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.SecurityStamp" class="control-label"></label>
+                <input asp-for="Profile.SecurityStamp" class="form-control" />
+                <span asp-validation-for="Profile.SecurityStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.ConcurrencyStamp" class="control-label"></label>
+                <input asp-for="Profile.ConcurrencyStamp" class="form-control" />
+                <span asp-validation-for="Profile.ConcurrencyStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.PhoneNumber" class="control-label"></label>
+                <input asp-for="Profile.PhoneNumber" class="form-control" />
+                <span asp-validation-for="Profile.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Profile.PhoneNumberConfirmed" /> @Html.DisplayNameFor(model => model.Profile.PhoneNumberConfirmed)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Profile.TwoFactorEnabled" /> @Html.DisplayNameFor(model => model.Profile.TwoFactorEnabled)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.LockoutEnd" class="control-label"></label>
+                <input asp-for="Profile.LockoutEnd" class="form-control" />
+                <span asp-validation-for="Profile.LockoutEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Profile.LockoutEnabled" /> @Html.DisplayNameFor(model => model.Profile.LockoutEnabled)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.AccessFailedCount" class="control-label"></label>
+                <input asp-for="Profile.AccessFailedCount" class="form-control" />
+                <span asp-validation-for="Profile.AccessFailedCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

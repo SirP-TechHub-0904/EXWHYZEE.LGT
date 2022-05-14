@@ -1,0 +1,96 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.Dashboard.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-sm-6 col-xl-3">
+        <div class="card card-body bg-primary has-bg-image">
+            <a asp-page="" asp-area="">
+                <div class="media">
+                    <div class="media-body">
+                        <h3 class="mb-0">@Model.Staff</h3>
+                        <span class="text-uppercase font-size-xs">Total Staff</span>
+                    </div>
+
+                    <div class="ml-3 align-self-center">
+                        <i class="icon-bubbles4 icon-3x opacity-75"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xl-3">
+        <div class="card card-body bg-danger has-bg-image">
+            <a asp-page="" asp-area="">
+
+                <div class="media">
+                    <div class="media-body">
+                        <h3 class="mb-0">@Model.State</h3>
+                        <span class="text-uppercase font-size-xs">Total States</span>
+                    </div>
+
+                    <div class="ml-3 align-self-center">
+                        <i class="icon-bag icon-3x opacity-75"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xl-3">
+        <div class="card card-body bg-success has-bg-image">
+            <a asp-page="" asp-area="">
+
+                <div class="media">
+                    <div class="mr-3 align-self-center">
+                        <i class="icon-pointer icon-3x opacity-75"></i>
+                    </div>
+
+                    <div class="media-body text-right">
+                        <h3 class="mb-0">@Model.LGA</h3>
+                        <span class="text-uppercase font-size-xs">Total LGA</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xl-3">
+        <div class="card card-body bg-indigo has-bg-image">
+            <a asp-page="" asp-area="">
+
+                <div class="media">
+                    <div class="mr-3 align-self-center">
+                        <i class="icon-enter6 icon-3x opacity-75"></i>
+                    </div>
+
+                    <div class="media-body text-right">
+                        <h3 class="mb-0">@Model.Category</h3>
+                        <span class="text-uppercase font-size-xs">Total Categories</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-6 col-xl-3">
+        <div class="card card-body bg-danger has-bg-image">
+            <a asp-page="" asp-area="">
+
+                <div class="media">
+                    <div class="media-body">
+                        <h3 class="mb-0">@Model.Sections</h3>
+                        <span class="text-uppercase font-size-xs">Total Sections</span>
+                    </div>
+
+                    <div class="ml-3 align-self-center">
+                        <i class="icon-bag icon-3x opacity-75"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

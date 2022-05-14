@@ -1,0 +1,52 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.LgaExecutive.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LocalGovtExecutive</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LocalGovtExecutive.User)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LocalGovtExecutive.User.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LocalGovtExecutive.LocalGovernment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LocalGovtExecutive.LocalGovernment.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LocalGovtExecutive.Position)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LocalGovtExecutive.Position)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LocalGovtExecutive.StartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LocalGovtExecutive.StartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LocalGovtExecutive.EndDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LocalGovtExecutive.EndDate)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="LocalGovtExecutive.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.SpecialProjectPage.Projects.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>SpecialProject</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SpecialProject.Title" class="control-label"></label>
+                <input asp-for="SpecialProject.Title" class="form-control" />
+                <span asp-validation-for="SpecialProject.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialProject.Description" class="control-label"></label>
+                <input asp-for="SpecialProject.Description" class="form-control" />
+                <span asp-validation-for="SpecialProject.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialProject.FullAddress" class="control-label"></label>
+                <input asp-for="SpecialProject.FullAddress" class="form-control" />
+                <span asp-validation-for="SpecialProject.FullAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialProject.DateStart" class="control-label"></label>
+                <input asp-for="SpecialProject.DateStart" class="form-control" />
+                <span asp-validation-for="SpecialProject.DateStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialProject.DateEnd" class="control-label"></label>
+                <input asp-for="SpecialProject.DateEnd" class="form-control" />
+                <span asp-validation-for="SpecialProject.DateEnd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialProject.SpecialProjectCategoryId" class="control-label"></label>
+                <select asp-for="SpecialProject.SpecialProjectCategoryId" class ="form-control" asp-items="ViewBag.SpecialProjectCategoryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

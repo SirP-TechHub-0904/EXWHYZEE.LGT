@@ -1,0 +1,53 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.LgaPanel.CreateMSModel
+
+@{
+    ViewData["Title"] = "CreateMS";
+}
+<div class="card">
+    <div class="card-header">
+        <h3>New Mineral Resources in @Model.Community.Title </h3>
+
+        <a asp-page="/LgaPanel/CommunityResources" class="btn btn-danger" style="float:right;">Back to List</a>
+
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input asp-for="MineralResource.CommunityId" hidden="hidden" value="@Model.Community.Id" />
+
+                    <div class="form-group">
+                        <label asp-for="MineralResource.Title" class="control-label"></label>
+                        <input asp-for="MineralResource.Title" class="form-control" />
+                        <span asp-validation-for="MineralResource.Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MineralResource.Description" class="control-label"></label>
+                        <input asp-for="MineralResource.Description" class="form-control" />
+                        <span asp-validation-for="MineralResource.Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MineralResource.StartDate" class="control-label"></label>
+                        <input asp-for="MineralResource.StartDate" class="form-control" />
+                        <span asp-validation-for="MineralResource.StartDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MineralResource.EndDate" class="control-label"></label>
+                        <input asp-for="MineralResource.EndDate" class="form-control" />
+                        <span asp-validation-for="MineralResource.EndDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }

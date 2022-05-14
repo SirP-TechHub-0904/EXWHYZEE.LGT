@@ -1,0 +1,21 @@
+﻿
+<a href="#" class="mr-3">
+    @if (TempData["img"] != null)
+    {
+        <img src="@TempData["img"]" class="rounded-circle" alt="">
+
+    }
+    else
+    {
+        <img src="~/img/user1.jpg" class="rounded-circle" alt="">
+
+    }
+
+</a>
+
+<div class="media-body">
+    <div class="font-weight-semibold">@TempData["data"]</div>
+    <div class="font-size-sm line-height-sm opacity-50">
+        @TempData["sponsor"]
+    </div>
+</div>

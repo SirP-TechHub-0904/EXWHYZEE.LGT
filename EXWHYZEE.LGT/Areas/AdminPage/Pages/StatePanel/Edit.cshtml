@@ -1,0 +1,38 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.StatePanel.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3>@Model.State.Title</h3>
+
+        <a asp-page="./Index" class="btn btn-danger" style="float:right;">Back to List</a>
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="State.Id" />
+                    <div class="form-group">
+                        <label asp-for="State.Title" class="control-label"></label>
+                        <input asp-for="State.Title" class="form-control" />
+                        <span asp-validation-for="State.Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Update" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }

@@ -1,0 +1,55 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.LgaExecutive.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>LocalGovtExecutive</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="LocalGovtExecutive.Id" />
+            <div class="form-group">
+                <label asp-for="LocalGovtExecutive.UserId" class="control-label"></label>
+                <select asp-for="LocalGovtExecutive.UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="LocalGovtExecutive.UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalGovtExecutive.LocalGovernmentId" class="control-label"></label>
+                <select asp-for="LocalGovtExecutive.LocalGovernmentId" class="form-control" asp-items="ViewBag.LocalGovernmentId"></select>
+                <span asp-validation-for="LocalGovtExecutive.LocalGovernmentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalGovtExecutive.Position" class="control-label"></label>
+                <input asp-for="LocalGovtExecutive.Position" class="form-control" />
+                <span asp-validation-for="LocalGovtExecutive.Position" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalGovtExecutive.StartDate" class="control-label"></label>
+                <input asp-for="LocalGovtExecutive.StartDate" class="form-control" />
+                <span asp-validation-for="LocalGovtExecutive.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalGovtExecutive.EndDate" class="control-label"></label>
+                <input asp-for="LocalGovtExecutive.EndDate" class="form-control" />
+                <span asp-validation-for="LocalGovtExecutive.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

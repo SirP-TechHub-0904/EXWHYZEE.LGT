@@ -1,0 +1,58 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.SpecialProjectPage.Projects.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SpecialProject</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialProject.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpecialProject.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialProject.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpecialProject.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialProject.FullAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpecialProject.FullAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialProject.DateStart)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpecialProject.DateStart)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialProject.DateEnd)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpecialProject.DateEnd)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SpecialProject.SpecialProjectCategory)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SpecialProject.SpecialProjectCategory.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="SpecialProject.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

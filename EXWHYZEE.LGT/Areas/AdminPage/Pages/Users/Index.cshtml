@@ -1,0 +1,84 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.Users.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="card">
+    <div class="card-header">
+        <h3>All Users (@Model.Profile.Count())</h3>
+
+
+    </div>
+    <div class="card-body">
+
+
+
+        <div class="datatable-scroll">
+            <table class="table datatable-show-all dataTable no-footer" id="DataTables_Table_0">
+                <thead>
+                    <tr>
+                        <th>
+                            S/N
+                        </th>
+
+                        <th>
+                            Fullname
+
+                        </th>
+
+                        <th>
+                            State
+                        </th>
+                        <th>
+                            LGA
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.Profile[0].Email)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.Profile[0].PhoneNumber)
+                        </th>
+
+                    </tr>
+                </thead>
+                @{
+                    int sno = 0;
+                }
+                <tbody>
+                    @foreach (var item in Model.Profile)
+                    {
+                        <tr>
+                            <td>
+                                @{ sno++; }
+                                @sno
+                            </td>
+
+                            <td>
+                                <a asp-page="./Details" asp-route-id="">
+                                    @Html.DisplayFor(modelItem => item.Surname) @Html.DisplayFor(modelItem => item.Firstname) @Html.DisplayFor(modelItem => item.Middlename)
+                                </a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.State.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LocalGovernment.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PhoneNumber)
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

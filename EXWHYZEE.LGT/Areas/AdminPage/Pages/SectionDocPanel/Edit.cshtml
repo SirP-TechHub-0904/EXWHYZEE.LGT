@@ -1,0 +1,60 @@
+﻿@page
+@model EXWHYZEE.LGT.Areas.AdminPage.Pages.SectionDocPanel.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SectionDocument</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SectionDocument.Id" />
+            <div class="form-group">
+                <label asp-for="SectionDocument.Title" class="control-label"></label>
+                <input asp-for="SectionDocument.Title" class="form-control" />
+                <span asp-validation-for="SectionDocument.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SectionDocument.Description" class="control-label"></label>
+                <input asp-for="SectionDocument.Description" class="form-control" />
+                <span asp-validation-for="SectionDocument.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SectionDocument.IdNumber" class="control-label"></label>
+                <input asp-for="SectionDocument.IdNumber" class="form-control" />
+                <span asp-validation-for="SectionDocument.IdNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SectionDocument.IssueDate" class="control-label"></label>
+                <input asp-for="SectionDocument.IssueDate" class="form-control" />
+                <span asp-validation-for="SectionDocument.IssueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SectionDocument.ExpiringDate" class="control-label"></label>
+                <input asp-for="SectionDocument.ExpiringDate" class="form-control" />
+                <span asp-validation-for="SectionDocument.ExpiringDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SectionDocument.SectionId" class="control-label"></label>
+                <select asp-for="SectionDocument.SectionId" class="form-control" asp-items="ViewBag.SectionId"></select>
+                <span asp-validation-for="SectionDocument.SectionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
