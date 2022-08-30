@@ -1,0 +1,80 @@
+﻿@page
+@model LocalGovernments.Areas.Admin.Pages.Datas.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>IndicatorData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IndicatorData.Id" />
+            <div class="form-group">
+                <label asp-for="IndicatorData.Title" class="control-label"></label>
+                <input asp-for="IndicatorData.Title" class="form-control" />
+                <span asp-validation-for="IndicatorData.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.Unit" class="control-label"></label>
+                <input asp-for="IndicatorData.Unit" class="form-control" />
+                <span asp-validation-for="IndicatorData.Unit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.Year" class="control-label"></label>
+                <input asp-for="IndicatorData.Year" class="form-control" />
+                <span asp-validation-for="IndicatorData.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.PeriodInYear" class="control-label"></label>
+                <input asp-for="IndicatorData.PeriodInYear" class="form-control" />
+                <span asp-validation-for="IndicatorData.PeriodInYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.IndicatorSymbol" class="control-label"></label>
+                <input asp-for="IndicatorData.IndicatorSymbol" class="form-control" />
+                <span asp-validation-for="IndicatorData.IndicatorSymbol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.IndicatorValue" class="control-label"></label>
+                <input asp-for="IndicatorData.IndicatorValue" class="form-control" />
+                <span asp-validation-for="IndicatorData.IndicatorValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.Note" class="control-label"></label>
+                <input asp-for="IndicatorData.Note" class="form-control" />
+                <span asp-validation-for="IndicatorData.Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.LocalGovernmentId" class="control-label"></label>
+                <select asp-for="IndicatorData.LocalGovernmentId" class="form-control" asp-items="ViewBag.LocalGovernmentId"></select>
+                <span asp-validation-for="IndicatorData.LocalGovernmentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.DataSource" class="control-label"></label>
+                <input asp-for="IndicatorData.DataSource" class="form-control" />
+                <span asp-validation-for="IndicatorData.DataSource" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.IndicatorId" class="control-label"></label>
+                <select asp-for="IndicatorData.IndicatorId" class="form-control" asp-items="ViewBag.IndicatorId"></select>
+                <span asp-validation-for="IndicatorData.IndicatorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

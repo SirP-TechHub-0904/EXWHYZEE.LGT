@@ -1,0 +1,50 @@
+﻿@page
+@model LocalGovernments.Areas.Admin.Pages.IndicatorInit.ICreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Indicator</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Indicator.Title" class="control-label"></label>
+                <input asp-for="Indicator.Title" class="form-control" />
+                <span asp-validation-for="Indicator.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Indicator.Icon" class="control-label"></label>
+                <input asp-for="Indicator.Icon" class="form-control" />
+                <span asp-validation-for="Indicator.Icon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Indicator.Description" class="control-label"></label>
+                <input asp-for="Indicator.Description" class="form-control" />
+                <span asp-validation-for="Indicator.Description" class="text-danger"></span>
+            </div>
+             
+            @TempData["xx"]
+            <div class="form-group">
+                <label asp-for="Indicator.SubIndicatorId" class="control-label"></label>
+                <input asp-for="Indicator.SubIndicatorId" class="form-control" value="@TempData["idd"]" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

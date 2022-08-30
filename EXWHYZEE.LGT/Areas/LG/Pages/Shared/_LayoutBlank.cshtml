@@ -62,9 +62,12 @@
             background-color: #343a40 !important;
             color: #ffffff;
         }
-
+        .bg-warning {
+            background-color: #5c512f !important;
+            color: #ffffff;
+        }
         .small-box h3 {
-            font-size: 24px;
+            font-size: medium;
         }
         .pagination {
             display: inline-block;
@@ -80,6 +83,17 @@
 
         .small-box p {
             font-size: 18px;
+        }
+        .small-box h3 {
+            white-space:pre-wrap;
+            height:40px;
+        }
+        a {
+            color: #e7ebed;
+        }
+
+        a:hover {
+            color: #dcecf5;
         }
     </style>
 
@@ -104,7 +118,16 @@
     <!-- Bootstrap 3.3.7 -->
     <script src="~/dashboard/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- iCheck -->
+
     <script src="~/dashboard/plugins/iCheck/icheck.min.js"></script>
+
+    <script src="~/dashboard/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/dashboard/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/dashboard/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/dashboard/dist/js/demo.js"></script>
     <script>
         $(function () {
             $('input').iCheck({
@@ -115,7 +138,22 @@
         });
     </script>
     @RenderSection("Scripts", required: false)
-
+    <script>
+        let arrow = document.querySelectorAll(".arrow");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+                console.log(arrowParent);
+                arrowParent.classList.toggle("showMenu");
+            });
+        }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
+        });
+    </script>
 </body>
 </html>
 

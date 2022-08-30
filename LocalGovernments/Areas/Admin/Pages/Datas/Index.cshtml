@@ -1,0 +1,99 @@
+﻿@page
+@model LocalGovernments.Areas.Admin.Pages.Datas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@TempData["re"]
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>S/N</th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].PeriodInYear)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].IndicatorSymbol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].IndicatorValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].Note)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].LocalGovernment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].DataSource)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IndicatorData[0].Indicator)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    @{ 
+        int sn = 0;
+    }
+    <tbody>
+@foreach (var item in Model.IndicatorData) {
+        <tr>
+            <td>
+                @{ sn++;}
+                @sn
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeriodInYear)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndicatorSymbol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IndicatorValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalGovernment.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSource)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Indicator.Title)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

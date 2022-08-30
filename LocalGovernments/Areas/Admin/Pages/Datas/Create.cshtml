@@ -1,0 +1,47 @@
+﻿@page
+@model LocalGovernments.Areas.Admin.Pages.Datas.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>IndicatorData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IndicatorData.IndicatorId" class="control-label"></label>
+                <input asp-for="IndicatorData.IndicatorId" class="form-control" />
+                <span asp-validation-for="IndicatorData.IndicatorId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+
+
+        </form>
+        <form method="post" asp-page-handler="Delete">
+            <input asp-for="IndicatorData.IndicatorId" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </form>
+
+        <form method="post" asp-page-handler="Check">
+            <input type="submit" value="Check" class="btn btn-danger" />
+        </form>
+
+        
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

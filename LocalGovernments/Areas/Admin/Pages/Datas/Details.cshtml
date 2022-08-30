@@ -1,0 +1,79 @@
+﻿@page
+@model LocalGovernments.Areas.Admin.Pages.Datas.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>IndicatorData</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.Unit)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.Unit)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.Year)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.PeriodInYear)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.PeriodInYear)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.IndicatorSymbol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.IndicatorSymbol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.IndicatorValue)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.IndicatorValue)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.Note)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.Note)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.LocalGovernment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.LocalGovernment.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.DataSource)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.DataSource)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IndicatorData.Indicator)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IndicatorData.Indicator.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.IndicatorData.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

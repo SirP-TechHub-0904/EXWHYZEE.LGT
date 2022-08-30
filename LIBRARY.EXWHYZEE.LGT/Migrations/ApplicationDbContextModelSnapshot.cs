@@ -15,7 +15,7 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.24")
+                .HasAnnotation("ProductVersion", "3.1.25")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -222,6 +222,84 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.ToTable("Images");
                 });
 
+            modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.Indicator", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("SubIndicatorId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SubIndicatorId");
+
+                    b.ToTable("Indicators");
+                });
+
+            modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.IndicatorData", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DataSource")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("IndicatorId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("IndicatorSymbol")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("IndicatorValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<long>("LocalGovernmentId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PeriodInYear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Unit")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Year")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IndicatorId");
+
+                    b.HasIndex("LocalGovernmentId");
+
+                    b.ToTable("IndicatorDatas");
+                });
+
             modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.LgaDisbusement", b =>
                 {
                     b.Property<long>("Id")
@@ -416,6 +494,30 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.ToTable("LocalGovtExecutives");
                 });
 
+            modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.MainIndicator", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MainIndicators");
+                });
+
             modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.MineralResource", b =>
                 {
                     b.Property<long>("Id")
@@ -456,13 +558,10 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.Property<string>("AltPoneNumber")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("AppointmentLetter")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("AppointmentDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("AuthorizationRole")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BodyStructure")
+                    b.Property<string>("BVN")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CV")
@@ -478,7 +577,13 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ContactAddress")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("DOB")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateRegistration")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -488,19 +593,40 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("EmploymentDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Firstname")
+                    b.Property<string>("EmergencyContactEmail")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FullContactAdress")
+                    b.Property<string>("EmergencyContactName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmergencyContactPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Firstname")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Height")
+                    b.Property<string>("IdCardNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdCardType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("IdCardUpload")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastPromotionDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastQualification")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastQualificationYear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LetterOfAppointment")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Level")
@@ -515,7 +641,34 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
 
+                    b.Property<string>("MaritalStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MethodOfLastPromotion")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Middlename")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MotherMaidenName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NextKinAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NextKinEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NextKinName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NextKinOccupation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NextKinPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NextKinRelationship")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
@@ -526,7 +679,7 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
-                    b.Property<string>("Passport")
+                    b.Property<string>("PassPort")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
@@ -544,9 +697,6 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.Property<string>("Position")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Rank")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("RetirementDate")
                         .HasColumnType("datetime2");
 
@@ -556,22 +706,34 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.Property<decimal>("Salary")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("SalaryAccountBank")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("SalaryAccountName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SalaryAccountNumber")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("SalaryBankName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SpouseName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long?>("StateId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("StateOfBirth")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StatesVisited")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Surname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TotalChildren")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -580,12 +742,6 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
-
-                    b.Property<string>("ValidIdCard")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Weight")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -781,6 +937,35 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("States");
+                });
+
+            modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.SubIndicator", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("MainIndicatorId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MainIndicatorId");
+
+                    b.ToTable("SubIndicators");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -990,6 +1175,30 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                         .HasForeignKey("SpecialProjectId");
                 });
 
+            modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.Indicator", b =>
+                {
+                    b.HasOne("LIBRARY.EXWHYZEE.LGT.Data.Model.SubIndicator", "SubIndicator")
+                        .WithMany("Indicators")
+                        .HasForeignKey("SubIndicatorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.IndicatorData", b =>
+                {
+                    b.HasOne("LIBRARY.EXWHYZEE.LGT.Data.Model.Indicator", "Indicator")
+                        .WithMany("IndicatorDatas")
+                        .HasForeignKey("IndicatorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LIBRARY.EXWHYZEE.LGT.Data.Model.LocalGovernment", "LocalGovernment")
+                        .WithMany()
+                        .HasForeignKey("LocalGovernmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.LgaDisbusement", b =>
                 {
                     b.HasOne("LIBRARY.EXWHYZEE.LGT.Data.Model.LocalGovernment", "LocalGovernment")
@@ -1101,7 +1310,7 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
             modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.SpecialProject", b =>
                 {
                     b.HasOne("LIBRARY.EXWHYZEE.LGT.Data.Model.SpecialProjectCategory", "SpecialProjectCategory")
-                        .WithMany("Sections")
+                        .WithMany("SpecialProject")
                         .HasForeignKey("SpecialProjectCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1112,6 +1321,15 @@ namespace LIBRARY.EXWHYZEE.LGT.Migrations
                     b.HasOne("LIBRARY.EXWHYZEE.LGT.Data.Model.LocalGovernment", "LocalGovernment")
                         .WithMany()
                         .HasForeignKey("LocalGovernmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LIBRARY.EXWHYZEE.LGT.Data.Model.SubIndicator", b =>
+                {
+                    b.HasOne("LIBRARY.EXWHYZEE.LGT.Data.Model.MainIndicator", "MainIndicator")
+                        .WithMany("SubIndicators")
+                        .HasForeignKey("MainIndicatorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -31,5 +31,13 @@ namespace LIBRARY.EXWHYZEE.LGT.Data
         public DbSet<SpecialProjectCategory> SpecialProjectCategory { get; set; }
         public DbSet<LgaDisbusement> LgaDisbusements { get; set; }
         public DbSet<LgaDisbusementBreakdown> LgaDisbusementBreakdowns { get; set; }
+
+
+        public DbSet<Indicator> Indicators { get; set; }
+        public DbSet<SubIndicator> SubIndicators { get; set; }
+        public DbSet<MainIndicator> MainIndicators { get; set; }
+        public DbSet<IndicatorData> IndicatorDatas { get; set; }
+
+
     }
 }
